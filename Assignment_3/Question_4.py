@@ -13,22 +13,21 @@ from math import sqrt as square_root
 def get_sides():
     err = 0
     try:
-        A = int(side_a_text.get())
-        B = int(side_b_text.get())
+        a = int(side_a_text.get())
+        b = int(side_b_text.get())
     except ValueError:
         err = 1
         messagebox.showerror("Error", "Please Enter Proper Integers")
     finally:
         if err == 0:
-            C = square_root(A**2 + B**2)
-            return C
+            c = square_root(a**2 + b**2)
+            return c
 
 
 def calc_button():
-    C_value = get_sides()
-    side_c_text.set(f"{C_value:.3f}")
+    c_value = get_sides()
+    side_c_text.set(f"{c_value:.3f}")
     
-
 
 def exit_button():
     calc_window.destroy()
@@ -63,11 +62,11 @@ side_c_entry = ttk.Entry(frame, width=35, textvariable=side_c_text, state="reado
 side_c_entry.grid(column=1, row=2, columnspan=2, sticky=tk.E)
 
 
-
 calculate = ttk.Button(frame, text="Calculate", command=calc_button)
 end = ttk.Button(frame, text="Exit", command=exit_button)
-calculate.grid(column=2, row=3, sticky=tk.W)
-end.grid(column=2, row=3, sticky=tk.E)
+calculate.grid(column=1, row=3, sticky=tk.E)
+end.grid(column=2, row=3, sticky=tk.W)
+
 
 for child in frame.winfo_children():
     child.grid_configure(padx=5, pady=3)
