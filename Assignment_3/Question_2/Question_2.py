@@ -1,35 +1,34 @@
 """
 Assignment 3
 
-Question 2 - Main User Interface
+Question 2 - Main User Interface.
 """
 import Question_2_Functions as Func
 
 
 def title_menu():
-    print("Player Manager")
+    print("Player Manager\n")
     print("COMMAND MENU\nview - View players")
-    print("add - Add a player\ndel - Delete a player\nexit - Exit program")
+    print("add - Add a player\ndel - Delete a player\nexit - Exit program\n")
 
 
 def main():
     title_menu()
     while True:
-        command = input("\nCommand: ").lower()
+        command = input("Command: ").lower()
         if command == "view":
             Func.view_players()
-            command = input("\nCommand: ").lower()
+            print("")
         elif command == "add":
             Func.add_player()
-            command = input("\nCommand: ").lower()
+            print("")
         elif command == "del":
-            Func.delete_player()
-            command = input("\nCommand: ").lower()
+            Func.del_player()
+            print("")
         elif command == "exit":
             break
         else:
             print("\nInvalid command, try again.")
-            command = input("Command: ").lower()
     print("Bye!")
 
 
