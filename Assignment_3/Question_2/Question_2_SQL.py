@@ -37,3 +37,33 @@ def delete(player_name):
     c.execute(query)
     conn.commit()
     conn.close()
+
+
+def update(player_name, player_wins, player_losses, player_ties):
+    query = f"""update Player set
+    wins = '{player_wins}',
+    losses = '{player_losses}',
+    ties = '{player_ties}'
+    where name = '{player_name}'"""
+
+    conn = sqlite3.connect('Question2_Supporting_Files/player_db.sqlite')
+    c = conn.cursor()
+    c.execute(query)
+    conn.commit()
+    conn.close()
+
+def player_list():
+    players = []
+    
+    query = "select name from Player"
+
+    conn = sqlite3.connect('Question2_Supporting_Files/player_db.sqlite')
+    c = conn.cursor()
+    c.execute(query)
+    rows = c.fetchall()
+    conn.close()
+    
+    for row in rows:
+        players.append(row[0])
+
+    return players

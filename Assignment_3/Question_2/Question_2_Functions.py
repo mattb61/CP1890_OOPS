@@ -1,7 +1,7 @@
 """
 Assignment 3
 
-Question 2 - Functions.
+Question 2 - Python functions.
 """
 
 import Question_2_SQL as Q2_sql
@@ -24,10 +24,60 @@ def del_player():
 
 def add_player():
     name = input("Name: ").title()
-    wins = int(input("Wins: "))
-    losses = int(input("Losses: "))
-    ties = int(input("Ties: "))
+    wins, losses, ties = get_int()
 
     Q2_sql.add(name, wins, losses, ties)
 
     print(f"{name} was added to database.")
+
+
+def update_stats():
+    players = Q2_sql.player_list()
+    cont = 0
+
+    player_name = input("Name: ").title()
+        
+    for player in players:
+        if player == player_name:
+            cont = 1
+        
+    if cont != 1:
+        print(f"{player_name} not found in database.")
+    else:
+        player_wins, player_losses, player_ties = get_int()
+            
+        Q2_sql.update(player_name, player_wins, player_losses, player_ties)
+            
+        print(f"{player_name}'s stats were updated.")
+
+
+def get_int():
+    while True:
+        try:
+            player_wins = int(input("Wins: "))
+            if player_wins < 0:
+                print("Cannot accept negative values.\n")
+            else:
+                break
+        except ValueError:
+            print("Invalid integer.\n")
+            continue
+    while True:
+        try:
+            player_losses = int(input("Losses: "))
+            if player_losses < 0:
+                print("Cannot accept negative values.\n")
+            else:
+                break
+        except ValueError:
+            print("Invalid integer.\n")
+    while True:
+        try:
+            player_ties = int(input("Ties: "))
+            if player_ties < 0:
+                print("Cannot accept negative values.\n")
+            else:
+                break
+        except ValueError:
+            print("Invalid integer.\n")
+    return player_wins, player_losses, player_ties

@@ -7,9 +7,10 @@ import Question_2_Functions as Func
 
 
 def title_menu():
-    print("Player Manager\n")
-    print("COMMAND MENU\nview - View players")
-    print("add - Add a player\ndel - Delete a player\nexit - Exit program\n")
+    print("Player Manager")
+    print(f"\nCOMMAND MENU\n{'view':>6} - View players")
+    print(f"{'add':>6} - Add a player\n{'del':>6} - Delete a player")
+    print(f"{'update':>6} - Update a player's stats\n{'exit':>6} - Exit program\n")
 
 
 def main():
@@ -24,6 +25,9 @@ def main():
             print("")
         elif command == "del":
             Func.del_player()
+            print("")
+        elif command == "update":
+            Func.update_stats()
             print("")
         elif command == "exit":
             break
