@@ -1,7 +1,7 @@
 """
 Assignment 3
 
-Question 2 - SQL related functions/commands.
+Question 2 - SQL related Functions / Commands.
 """
 
 import sqlite3

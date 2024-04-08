@@ -18,16 +18,20 @@ def main():
     while True:
         command = input("Command: ").lower()
         if command == "view":
-            Func.view_players()
+            Func.player_list.view_players()
             print("")
         elif command == "add":
-            Func.add_player()
+            name = input("Name: ")
+            wins, losses, ties = Func.get_int()
+            Func.player_list.add_player(name, wins, losses, ties)
             print("")
         elif command == "del":
-            Func.del_player()
+            Func.player_list.del_player(input("Name: "))
             print("")
         elif command == "update":
-            Func.update_stats()
+            name = input("Name: ")
+            wins, losses, ties = Func.get_int()
+            Func.player_list.update_player(name, wins, losses, ties)
             print("")
         elif command == "exit":
             break
