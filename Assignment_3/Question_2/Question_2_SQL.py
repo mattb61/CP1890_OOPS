@@ -52,6 +52,7 @@ def update(player_name, player_wins, player_losses, player_ties):
     conn.commit()
     conn.close()
 
+
 def player_list():
     players = []
     
