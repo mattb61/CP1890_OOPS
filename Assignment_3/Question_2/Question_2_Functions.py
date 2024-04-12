@@ -73,7 +73,7 @@ class PlayerList:
         Q2_sql.delete(player_name)
         print(f"{player_name} was deleted from database.")
 
-    def update_player(self, player_name: str, wins: int, losses: int, ties: int):
+    def update_player(self, player_name: str):
         """
         Updates a chosen player's stats.
         """
@@ -81,6 +81,7 @@ class PlayerList:
         player_name = player_name.title()
         for player in self.players:
             if player.name == player_name:
+                wins, losses, ties = get_int()
                 player.update_stats(player_name, wins, losses, ties)
                 check = 1
 

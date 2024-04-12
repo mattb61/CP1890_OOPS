@@ -36,8 +36,7 @@ def main():
             print("")
         elif command == "update":
             name = input("Name: ")
-            wins, losses, ties = Func.get_int()
-            Func.player_list.update_player(name, wins, losses, ties)
+            Func.player_list.update_player(name)
             print("")
         elif command == "exit":
             break
