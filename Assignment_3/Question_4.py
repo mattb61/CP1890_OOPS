@@ -68,7 +68,7 @@ side_b_entry = ttk.Entry(frame, width=35, textvariable=side_b_text)
 side_b_entry.grid(column=1, row=1, columnspan=2, sticky=tk.E)
 
 
-# side c
+# Side c
 side_c = ttk.Label(frame, text="Side C: ")
 side_c.grid(column=0, row=2, sticky=tk.E)
 side_c_text = tk.StringVar()
