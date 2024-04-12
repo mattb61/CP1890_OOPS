@@ -7,6 +7,9 @@ import Question_2_Functions as Func
 
 
 def title_menu():
+    """
+    Prints out title and command menu.
+    """
     print("Player Manager")
     print(f"\nCOMMAND MENU\n{'view':>6} - View players")
     print(f"{'add':>6} - Add a player\n{'del':>6} - Delete a player")
@@ -14,6 +17,9 @@ def title_menu():
 
 
 def main():
+    """
+    Main function / UI, calls other functions / classes from 2nd file.
+    """
     title_menu()
     while True:
         command = input("Command: ").lower()
