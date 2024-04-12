@@ -18,7 +18,7 @@ def title_menu():
 
 def main():
     """
-    Main function / UI, calls other functions / classes from 2nd file.
+    Main function/UI, calls other functions/classes from 2nd file.
     """
     title_menu()
     while True:
